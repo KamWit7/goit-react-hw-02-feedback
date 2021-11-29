@@ -1,11 +1,13 @@
 .flex {
-  width: 50vw;
+  min-width: 20vw;
+  max-width: 30vw;
   display: flex;
   justify-content: space-between;
 }
 
 .btn {
-  width: 15vw;
+  margin-right: 5px;
+  max-width: 15vw;
   font-size: 20px;
   cursor: pointer;
   color: whitesmoke;
