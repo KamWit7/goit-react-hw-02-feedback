@@ -1,14 +1,22 @@
 import React from "react"
-import FeedbackOptions from "./FeedbackOptions"
+import Stats from "./Stats"
 import Section from "./Section"
 import Notification from "./Notification"
-import Stats from "./Stats"
+import FeedbackOptions from "./FeedbackOptions"
 
 class Statisitcs extends React.Component {
-  constructor(props) {
-    super(props)
-    const { good, neutral, bad, total, positivePercentage } = props
-    this.state = { good, neutral, bad, total, positivePercentage }
+  // constructor(props) {
+  //   super(props)
+  //   const { good, neutral, bad, total, positivePercentage } = props
+  //   this.state = { good, neutral, bad, total, positivePercentage }
+  // }
+
+  state = {
+    good: this.props.good,
+    neutral: this.props.neutral,
+    bad: this.props.bad,
+    total: this.props.total,
+    positivePercentage: this.props.positivePercentage,
   }
 
   countTotalFeedback = ({ good, neutral, bad }) => good + neutral + bad
@@ -27,11 +35,11 @@ class Statisitcs extends React.Component {
       })
 
       toChange["positivePercentage"] = this.countPositiveFeedbackPercentage({
-        ...this.state,
+        ...this.state, // prevent NaN
         ...toChange,
       })
 
-      return { ...this.state, ...toChange }
+      return toChange
     })
   }
 
