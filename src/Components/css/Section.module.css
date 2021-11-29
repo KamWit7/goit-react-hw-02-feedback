@@ -1,0 +1,23 @@
+.title {
+  background: linear-gradient(140deg, #00fffe 0%, #ff00d8 80%);
+  color: transparent;
+  background-clip: text;
+}
+
+.title__big {
+  font-size: 35px;
+}
+
+.title__small {
+  font-size: 25px;
+}
+
+.flex {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.size {
+  width: 360px;
+}

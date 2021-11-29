@@ -1,6 +1,8 @@
 import React from "react"
 import FeedbackOptions from "./FeedbackOptions"
 import Section from "./Section"
+import Notification from "./Notification"
+import Stats from "./Stats"
 
 class Statisitcs extends React.Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class Statisitcs extends React.Component {
   countPositiveFeedbackPercentage = ({ good, total }) =>
     Math.round((good / total) * 100)
 
-  addStat = (stat) => {
+  updateStat = (stat) => {
     this.setState(() => {
       const toChange = {}
 
@@ -35,23 +37,22 @@ class Statisitcs extends React.Component {
 
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.state
-
     return (
       <>
-        <Section title={"Please leave feedback"}>
+        <Section title={"Please leave feedback"} fontSize={"big"}>
           <FeedbackOptions
             options={["Good", "Neutral", "Bad"]}
-            onLeaveFeedback={this.addStat}
+            onLeaveFeedback={this.updateStat}
           />
         </Section>
-
-        <Section title={"Statistics"}>
-          {good !== undefined && <p> Good: {good}</p>}
-          {neutral !== undefined && <p>Neutral: {neutral}</p>}
-          {bad !== undefined && <p>Bad: {bad}</p>}
-          {total !== undefined && <p>Total: {total}</p>}
-          {positivePercentage !== undefined && (
-            <p>positivePercentage: {positivePercentage}%</p>
+        <Section title={"Statistics"} fontSize={"small"}>
+          {this.countTotalFeedback({ good, neutral, bad }) ? (
+            <Stats
+              stats={[good, neutral, bad, total, positivePercentage]}
+              labels={["Good", "Neutral", "Bad", "Total", "Positive feedback"]}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
           )}
         </Section>
       </>

@@ -1,0 +1,16 @@
+.flex {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat {
+  background-color: rgba(241, 88, 241, 0.603);
+  font-size: 15px;
+  min-width: 7vw;
+  text-align: center;
+  border-radius: 2px;
+  padding: 4px;
+  box-shadow: 1px 1px 8px  rgba(0, 0, 0, 0.424);
+}

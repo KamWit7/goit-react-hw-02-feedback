@@ -1,12 +1,20 @@
 import React from "react"
+import styles from "./css/FeedbackOptions.module.css"
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  console.log(onLeaveFeedback, this)
-  return options.map((option) => (
-    <button key={option} onClick={() => onLeaveFeedback(option.toLowerCase())}>
-      {option}
-    </button>
-  ))
+  return (
+    <div className={styles.flex}>
+      {options.map((option) => (
+        <button
+          className={styles.btn}
+          key={option}
+          onClick={() => onLeaveFeedback(option.toLowerCase())}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  )
 }
 
 export default FeedbackOptions

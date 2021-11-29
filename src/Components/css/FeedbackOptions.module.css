@@ -1,0 +1,20 @@
+.flex {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 15vw;
+  font-size: 20px;
+  cursor: pointer;
+  color: whitesmoke;
+  border: 1px solid rgb(74, 13, 243);
+  background-color: rgba(71, 71, 70, 0.253);
+  border-radius: 2px;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 10px 1px rgba(0, 222, 255, 0.76),
+    0px 0px 10px 1px rgba(174, 0, 255, 0.76) inset;
+}
