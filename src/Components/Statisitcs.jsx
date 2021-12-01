@@ -5,12 +5,6 @@ import Notification from "./Notification"
 import FeedbackOptions from "./FeedbackOptions"
 
 class Statisitcs extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   const { good, neutral, bad, total, positivePercentage } = props
-  //   this.state = { good, neutral, bad, total, positivePercentage }
-  // }
-
   state = {
     good: this.props.good,
     neutral: this.props.neutral,
